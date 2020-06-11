@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 
 import TitlePage from '../templates/TitlePage';
+import AboutPage from '../templates/AboutPage';
 
 import GlobalStyle from '../theme/GlobalStyle';
 import { theme } from '../theme/mainTheme';
@@ -17,7 +18,7 @@ const IndexPage = () => (
     </Helmet>
     <GlobalStyle />
     <TitlePage />
-    <TitlePage />
+    <AboutPage />
   </ThemeProvider>
 );
 
