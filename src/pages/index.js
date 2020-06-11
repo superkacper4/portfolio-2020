@@ -1,22 +1,24 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Helmet } from 'react-helmet';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import TitlePage from '../templates/TitlePage';
+
+import GlobalStyle from '../theme/GlobalStyle';
+import { theme } from '../theme/mainTheme';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+  <ThemeProvider theme={theme}>
+    <Helmet>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </Helmet>
+    <GlobalStyle />
+    <TitlePage />
+    <TitlePage />
+  </ThemeProvider>
+);
 
-export default IndexPage
+export default IndexPage;
