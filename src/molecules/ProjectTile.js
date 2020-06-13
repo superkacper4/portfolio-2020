@@ -13,7 +13,7 @@ const StyledProjectTile = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 10px;
   border: ${({ theme }) => theme.black} solid 2px;
 
   /* &:hover{

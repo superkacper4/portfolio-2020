@@ -3,10 +3,12 @@ import styled from 'styled-components';
 
 import Wrapper from '../atoms/Wrapper';
 import H2 from '../atoms/H2';
+import H3 from '../atoms/H3';
 import ProjectTile from '../molecules/ProjectTile';
+import ProjectList from '../molecules/ProjectList';
+import ProjectListElement from '../atoms/ProjectListElement';
 
 const StyledWrapper = styled(Wrapper)`
-  padding: 0 10px;
   background-color: ${({ theme }) => theme.blue};
 `;
 
@@ -35,6 +37,12 @@ const AboutPage = () => {
       {projects.map((project) => (
         <ProjectTile name={project.name} description={project.description} />
       ))}
+      <H3>...Projects</H3>
+      <ProjectList>
+        {projects.map((project) => (
+          <ProjectListElement name={project.name} description={project.description} />
+        ))}
+      </ProjectList>
     </StyledWrapper>
   );
 };
