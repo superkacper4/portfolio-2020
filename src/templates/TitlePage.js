@@ -5,12 +5,20 @@ import Wrapper from '../atoms/Wrapper';
 import H1 from '../atoms/H1';
 
 const StyledWrapper = styled(Wrapper)`
-  background-color: ${({ theme }) => theme.lightBlue};
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: ${({ theme }) => theme.black} solid 3px;
+  animation: title infinite 6s linear both alternate;
+
+  @keyframes title {
+    0% {
+      background-color: ${({ theme }) => theme.lightBlue};
+    }
+    100% {
+      background-color: white;
+    }
+  }
 `;
 
 const StyledBall = styled.div`
