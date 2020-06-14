@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import H3 from '../atoms/H3';
 import Button from '../atoms/Button';
 
 const StyledProjectTile = styled.div`
-  height: 300px;
-  width: 300px;
+  height: 90vw;
+  width: 90vw;
   background-color: #acd1cf;
   position: relative;
   overflow: hidden;
@@ -13,8 +13,11 @@ const StyledProjectTile = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
   border: ${({ theme }) => theme.black} solid 2px;
+  opacity: ${({ animate }) => (animate ? '1' : '0')};
+  transform: ${({ animate }) => (animate ? 'translateY(0)' : 'translateY(-10px)')};
+  transition: transform 1.5s, opacity 1.5s;
 
   /* &:hover{
 
@@ -49,11 +52,30 @@ const StyledProjectTileActive = styled.div`
 
 const ProjectTile = ({ name, description }) => {
   const [active, setActive] = useState(false);
+  const [animate, setAnimate] = useState(false);
+
   const handleClick = () => {
     setActive(!active);
   };
+
+  const ourRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const topPosition = ourRef.current.offsetTop + ourRef.current.offsetHeight - window.innerHeight;
+
+    const onScroll = () => {
+      const scrollVal = window.scrollY;
+      if (scrollVal > topPosition) {
+        setAnimate(true);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <StyledProjectTile onClick={handleClick}>
+    <StyledProjectTile ref={ourRef} onClick={handleClick} animate={animate}>
       <H3>{name}</H3>
       <StyledProjectTileActive active={active}>
         {description}

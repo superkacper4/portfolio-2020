@@ -8,6 +8,7 @@ import ProjectsPage from '../templates/ProjectsPage';
 
 import GlobalStyle from '../theme/GlobalStyle';
 import { theme } from '../theme/mainTheme';
+import Footer from '../templates/Footer';
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -21,6 +22,7 @@ const IndexPage = () => (
     <TitlePage />
     <AboutPage />
     <ProjectsPage />
+    <Footer />
   </ThemeProvider>
 );
 
