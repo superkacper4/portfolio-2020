@@ -1,6 +1,8 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
+import A from './A';
+
 const StyledListElement = styled.li`
   height: 100px;
   width: 100%;
@@ -40,7 +42,9 @@ const ProjectListElement = ({ name }) => {
   }, []);
   return (
     <StyledListElement ref={ourRef} active={active}>
-      {name}
+      <A href="https://example.com" target="_blank" rel="noopener noreferrer">
+        {name}
+      </A>
     </StyledListElement>
   );
 };

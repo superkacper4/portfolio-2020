@@ -79,7 +79,7 @@ const ProjectTile = ({ name, description }) => {
       <H3>{name}</H3>
       <StyledProjectTileActive active={active}>
         {description}
-        <Button />
+        <Button>Odwiedź</Button>
       </StyledProjectTileActive>
     </StyledProjectTile>
   );

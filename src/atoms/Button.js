@@ -10,8 +10,12 @@ const StyledButton = styled.button`
   font-size: ${({ theme }) => theme.fontSize.m};
 `;
 
-const Button = () => {
-  return <StyledButton>Nazwa nawet dluzej</StyledButton>;
+const Button = ({ children }) => {
+  return (
+    <StyledButton onClick={() => window.open('https://example.com/', '_blank')}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default Button;
