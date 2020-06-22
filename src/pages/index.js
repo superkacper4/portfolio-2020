@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import TitlePage from '../templates/TitlePage';
 import AboutPage from '../templates/AboutPage';
 import ProjectsPage from '../templates/ProjectsPage';
+import SkillPage from '../templates/SkillPage';
 
 import GlobalStyle from '../theme/GlobalStyle';
 import { theme } from '../theme/mainTheme';
@@ -22,6 +23,7 @@ const IndexPage = () => (
     <TitlePage />
     <AboutPage />
     <ProjectsPage />
+    <SkillPage />
     <Footer />
   </ThemeProvider>
 );

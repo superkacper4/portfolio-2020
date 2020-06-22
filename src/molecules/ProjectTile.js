@@ -61,10 +61,10 @@ const ProjectTile = ({ name, description }) => {
   const ourRef = useRef(null);
 
   useLayoutEffect(() => {
-    const topPosition = ourRef.current.offsetTop + ourRef.current.offsetHeight - window.innerHeight;
+    const topPosition = ourRef.current.getBoundingClientRect().top + ourRef.current.offsetHeight;
 
     const onScroll = () => {
-      const scrollVal = window.scrollY;
+      const scrollVal = window.scrollY + window.innerHeight / 4;
       if (scrollVal > topPosition) {
         setAnimate(true);
       }

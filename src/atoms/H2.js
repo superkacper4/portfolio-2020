@@ -6,8 +6,8 @@ const StyledH2 = styled.h2`
   margin: 10px 0;
   font-size: ${({ theme }) => theme.fontSize.l};
   text-align: center;
-  opacity: ${({ active }) => (active ? '1' : '0')};
-  transform: ${({ active }) => (active ? 'translateY(0)' : 'translateY(-20px)')};
+  /* opacity: ${({ active }) => (active ? '1' : '0')};
+  transform: ${({ active }) => (active ? 'translateY(0)' : 'translateY(-20px)')}; */
   transition: opacity 1.5s, transform 1.5s;
 `;
 
@@ -17,10 +17,11 @@ const H2 = ({ children }) => {
   const ourRef = useRef(null);
 
   useLayoutEffect(() => {
-    const topPosition = ourRef.current.offsetTop + ourRef.current.offsetHeight - window.innerHeight;
+    const topPosition = ourRef.current.getBoundingClientRect().top + ourRef.current.offsetHeight;
 
     const onScroll = () => {
-      const scrollVal = window.scrollY;
+      console.log('H2: ', topPosition);
+      const scrollVal = window.scrollY + window.innerHeight / 2;
       if (scrollVal > topPosition) {
         setActive(true);
       }

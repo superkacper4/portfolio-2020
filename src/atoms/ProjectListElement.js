@@ -2,7 +2,7 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
 const StyledListElement = styled.li`
-  height: 10vh;
+  height: 100px;
   width: 100%;
   background-color: ${({ theme }) => theme.whiteBlue};
   border-bottom: solid 1px ${({ theme }) => theme.black};
@@ -21,13 +21,17 @@ const ProjectListElement = ({ name }) => {
   const ourRef = useRef(null);
 
   useLayoutEffect(() => {
-    const topPosition = ourRef.current.offsetTop + ourRef.current.offsetHeight - window.innerHeight;
+    // const topPosition = ourRef.current.offsetTop + ourRef.current.offsetHeight;
+    const topPosition = ourRef.current.getBoundingClientRect().top + ourRef.current.offsetHeight;
 
     const onScroll = () => {
-      const scrollVal = window.scrollY;
+      // const scrollVal = window.scrollY + window.innerHeight;
+      const scrollVal = window.scrollY + window.innerHeight / 3;
+      console.log(topPosition);
+      console.log(scrollVal);
       if (scrollVal > topPosition) {
-        console.log('XDD');
         setActive(true);
+        // setTimeout(() => { setActive(true); }, 1000);
       }
     };
 
