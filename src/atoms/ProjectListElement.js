@@ -1,6 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
+import { breakpoints } from '../theme/breakpoints';
 import A from './A';
 
 const StyledListElement = styled.li`
@@ -12,9 +13,13 @@ const StyledListElement = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: ${({ active }) => (active ? '1' : '0')};
-  transform: ${({ active }) => (active ? 'translateY(0)' : 'translateY(-20px)')};
+  /* opacity: ${({ active }) => (active ? '1' : '0')};
+  transform: ${({ active }) => (active ? 'translateY(0)' : 'translateY(-20px)')}; */
   transition: opacity 1.5s, transform 1.5s;
+
+  @media ${breakpoints.laptopL} {
+    height: 70px;
+  }
 `;
 
 const ProjectListElement = ({ name }) => {

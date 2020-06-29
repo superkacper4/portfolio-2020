@@ -43,9 +43,9 @@ const SkillPage = () => {
   return (
     <StyledWrapper>
       <H2>Skills</H2>
-      <P>Piszę w tym i tym pbaljadkjfljfk</P>
+      {/* <P>Piszę w tym i tym pbaljadkjfljfk</P> */}
       {skills.map((skill) => (
-        <SkillTile>
+        <SkillTile key={skill.key}>
           <H3>{skill.name}</H3>
           <P>{skill.description}</P>
         </SkillTile>

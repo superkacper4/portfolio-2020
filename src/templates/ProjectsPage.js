@@ -34,6 +34,18 @@ const projects = [
     description:
       'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
   },
+  {
+    key: 3,
+    name: 'Windows',
+    description:
+      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+  },
+  {
+    key: 4,
+    name: 'Windows',
+    description:
+      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+  },
 ];
 
 const ProjectsPage = () => {

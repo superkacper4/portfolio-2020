@@ -1,5 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../theme/breakpoints';
 import H3 from '../atoms/H3';
 import Button from '../atoms/Button';
 
@@ -14,10 +15,26 @@ const StyledProjectTile = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 10px 10px 10px;
+  padding: 5px;
   border: ${({ theme }) => theme.black} solid 2px;
-  opacity: ${({ animate }) => (animate ? '1' : '0')};
-  transform: ${({ animate }) => (animate ? 'translateY(0)' : 'translateY(-10px)')};
+  /* opacity: ${({ animate }) => (animate ? '1' : '0')};
+  transform: ${({ animate }) => (animate ? 'translateY(0)' : 'translateY(-10px)')}; */
   transition: transform 1.5s, opacity 1.5s;
+
+  @media ${breakpoints.tablet} {
+    height: 55vw;
+    width: 55vw;  
+    }
+
+  @media ${breakpoints.laptop} {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  @media ${breakpoints.laptopL} {
+    width: 20vw;
+    height: 20vw;
+  }
 
   /* &:hover{
 

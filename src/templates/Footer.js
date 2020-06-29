@@ -8,11 +8,14 @@ const StyledFooter = styled.footer`
   padding: 10px;
   margin: 0;
   background-color: ${({ theme }) => theme.lightBlue};
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const StyledP = styled(P)`
   font-size: ${({ theme }) => theme.fontSize.s};
   width: 100%;
+  flex-basis: 100%;
   text-align: center;
 `;
 

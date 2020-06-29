@@ -1,8 +1,10 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../theme/breakpoints';
+
 
 const StyledProjectTile = styled.div`
-  min-height: 50vw;
+  height: 50vw;
   width: 90vw;
   background-color: #acd1cf;
   display: flex;
@@ -11,9 +13,21 @@ const StyledProjectTile = styled.div`
   align-items: center;
   padding: 10px;
   margin: 10px 0;
-  opacity: ${({ active }) => (active ? '1' : '0')};
-  transform: ${({ active }) => (active ? 'translateY(0)' : 'translateX(-10px)')};
+  /* opacity: ${({ active }) => (active ? '1' : '0')};
+  transform: ${({ active }) => (active ? 'translateY(0)' : 'translateX(-10px)')}; */
   transition: transform 1.5s, opacity 1.5s;
+
+  @media ${breakpoints.tablet} {
+    width: 40vw;  
+    height: 30vw;
+    margin: 10px;
+  }
+
+  @media ${breakpoints.laptopL} {
+    width: 25vw;  
+    height: 15vw;
+    margin: 10px;
+  }
 `;
 
 const SkillTile = ({ children }) => {

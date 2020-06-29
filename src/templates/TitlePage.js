@@ -5,6 +5,7 @@ import Wrapper from '../atoms/Wrapper';
 import H1 from '../atoms/H1';
 
 const StyledWrapper = styled(Wrapper)`
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
