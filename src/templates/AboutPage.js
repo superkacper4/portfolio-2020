@@ -37,7 +37,7 @@ const StyledP = styled(P)`
 
 const AboutPage = () => {
   return (
-    <StyledWrapper>
+    <StyledWrapper id="about-page">
       <H2>About</H2>
       <Img src={Me} />
       <StyledP>

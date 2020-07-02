@@ -102,7 +102,7 @@ const projectsLess = [
 
 const ProjectsPage = () => {
   return (
-    <StyledWrapper>
+    <StyledWrapper id="project-page">
       <H2>Projects</H2>
       {projectsImportant.map((project) => (
         <ProjectTile

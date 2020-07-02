@@ -2,14 +2,15 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 
+import Nav from '../organisms/Nav';
 import TitlePage from '../templates/TitlePage';
 import AboutPage from '../templates/AboutPage';
 import ProjectsPage from '../templates/ProjectsPage';
 import SkillPage from '../templates/SkillPage';
+import Footer from '../templates/Footer';
 
 import GlobalStyle from '../theme/GlobalStyle';
 import { theme } from '../theme/mainTheme';
-import Footer from '../templates/Footer';
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -20,6 +21,7 @@ const IndexPage = () => (
       />
     </Helmet>
     <GlobalStyle />
+    <Nav />
     <TitlePage />
     <AboutPage />
     <ProjectsPage />

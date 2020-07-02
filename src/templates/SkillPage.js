@@ -41,7 +41,7 @@ const skills = [
 
 const SkillPage = () => {
   return (
-    <StyledWrapper>
+    <StyledWrapper id="skill-page">
       <H2>Skills</H2>
       {/* <P>Piszę w tym i tym pbaljadkjfljfk</P> */}
       {skills.map((skill) => (

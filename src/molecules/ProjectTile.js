@@ -30,6 +30,7 @@ const StyledProjectTile = styled.div`
   @media ${breakpoints.laptop} {
     width: 40vw;
     height: 40vw;
+    cursor:pointer;
   }
 
   @media ${breakpoints.laptopL} {
