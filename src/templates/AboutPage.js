@@ -18,7 +18,7 @@ const StyledWrapper = styled(Wrapper)`
 `;
 
 const StyledP = styled(P)`
-  /* height:auto; */
+  text-align: justify;
 
   @media ${breakpoints.laptop} {
     display: flex;
@@ -29,7 +29,8 @@ const StyledP = styled(P)`
   }
 
   @media ${breakpoints.laptopL} {
-    margin: 0 0 0 20px;
+    width: 40vw;
+    margin: 0 0 0 40px;
     height: 30vw;
   }
 `;
@@ -41,12 +42,11 @@ const AboutPage = () => {
       <Img src={Me} />
       <StyledP>
         Interesuję się Front-endem od około czterech lat i od tamtej pory rozwijam się w tej
-        dziedzinie. Rozpoczęcie studiów na Politechnice Warszawskiej pozwala mi na rozwinięcie
-        umiejętności oraz zdobycie specjalistycznej wiedzy. W wolnych chwilach realizuję projekty,
-        które mnie rozwijają i stawiają przede mną nowe wyzwania. Przez ostatnie pół roku robiłem z
-        kolegą grę na Android, niestety nie jest ona jeszcze ukończona, ale jest już na finiszu.
-        Ostatnio rozpocząłem też pracę nad prostą platformą e-learningową, jednak nie jest jeszcze
-        ona w pełni responsywna, więc nie jest również ukończona. Preferuję pracę w React.
+        dziedzinie. W 2019 rozpocząłem studia na Politechnice Warszawskiej na kierunku Informatyka
+        Przemysłowa na wydziale Mechatroniki. W wolnych chwilach realizuję projekty, które mnie
+        rozwijają i stawiają przede mną nowe wyzwania. Staram się zdobywać nowe umiejętności w
+        każdym kolejnym projekcie. Preferuję pracę w React ze Styled-components z zastosowaniem
+        Atomic-desing.
       </StyledP>
     </StyledWrapper>
   );

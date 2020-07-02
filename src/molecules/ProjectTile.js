@@ -2,6 +2,7 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../theme/breakpoints';
 import H3 from '../atoms/H3';
+import A from '../atoms/A';
 import Button from '../atoms/Button';
 
 const StyledProjectTile = styled.div`
@@ -67,7 +68,7 @@ const StyledProjectTileActive = styled.div`
   transform: ${({ active }) => (active ? 'translateY(-100%)' : 'translateY(0)')};
 `;
 
-const ProjectTile = ({ name, description }) => {
+const ProjectTile = ({ name, description, url }) => {
   const [active, setActive] = useState(false);
   const [animate, setAnimate] = useState(false);
 
@@ -96,7 +97,11 @@ const ProjectTile = ({ name, description }) => {
       <H3>{name}</H3>
       <StyledProjectTileActive active={active}>
         {description}
-        <Button>Odwiedź</Button>
+        <Button>
+          <A href={url} target="_blank" rel="noopener noreferrer">
+            Odwiedź
+          </A>
+        </Button>
       </StyledProjectTileActive>
     </StyledProjectTile>
   );

@@ -25,17 +25,17 @@ const skills = [
   {
     key: 1,
     name: 'CSS',
-    description: 'Staram się pisać poprawny semantycznie kod',
+    description: 'Znam flex-box, animacje i ogólnie sobie radzę.',
   },
   {
     key: 2,
     name: 'JavaScript',
-    description: 'Staram się pisać poprawny semantycznie kod',
+    description: 'Znam JS na tyle dobrze, że daję radę w React, umiem oczywiście więcej.......',
   },
   {
     key: 3,
     name: 'React',
-    description: 'Staram się pisać poprawny semantycznie kod',
+    description: 'Moja zdecydowanie ulubiona technologia Front-endowa, znam hooki.',
   },
 ];
 

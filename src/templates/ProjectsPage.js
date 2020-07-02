@@ -15,36 +15,88 @@ const StyledWrapper = styled(Wrapper)`
   justify-content: center;
 `;
 
-const projects = [
+const projectsImportant = [
   {
     key: 0,
     name: 'Witcher website',
-    description:
-      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+    description: 'Strona wykonana przy użyciu React i SCSS, opowiadająca troszkę o Wiedźminach.',
+    url: 'https://github.com/superkacper4/witcher-story-website',
   },
   {
     key: 1,
-    name: 'Bee Clicker',
+    name: 'Clicker',
     description:
-      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+      'Prosta gra typu kliker z podstawowymi funkcjami, wykonana w React i Styled-components',
+    url: 'https://github.com/superkacper4/clicker',
   },
   {
     key: 2,
-    name: 'Windows',
+    name: 'Estne',
     description:
-      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+      'Strona dla mojego Taty, nie korzystałem przy jej tworzeniu z React, tylko HTML, CSS i JS.',
+    url: 'https://github.com/superkacper4/estne-website',
   },
   {
     key: 3,
-    name: 'Windows',
+    name: 'E-learn',
     description:
-      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+      'Platforma edukacyjna umożliwiająca użytkownikowi naukę podzieloną na działy i wykonanie na koniec testu.',
+    url: 'https://github.com/superkacper4/e-learn',
   },
   {
     key: 4,
+    name: 'Rap-gra',
+    description: 'Gra w React-Native - w trakcie realizacji. Stay calm.',
+    url: 'https://github.com/superkacper4/rap-gra',
+  },
+  {
+    key: 5,
     name: 'Windows',
-    description:
-      'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie',
+    description: 'Prosty odpowiednik Winodws w przeglądarce. Użyty React i Styled-components.',
+    url: 'https://github.com/superkacper4/windows',
+  },
+];
+
+const projectsLess = [
+  {
+    key: 0,
+    name: 'Bee Name generator',
+    url: 'https://github.com/superkacper4/bee-name-generator-react',
+  },
+  {
+    key: 1,
+    name: 'One-page website',
+    url: 'https://github.com/superkacper4/one-page-website',
+  },
+  {
+    key: 2,
+    name: 'Zbiór prac',
+    url: 'https://github.com/superkacper4/portfolio-react',
+  },
+  {
+    key: 3,
+    name: 'Bussines page',
+    url: 'https://github.com/superkacper4/Business-page',
+  },
+  {
+    key: 4,
+    name: 'NASA picture of day',
+    url: 'https://github.com/superkacper4/nasa-pic-of-day',
+  },
+  {
+    key: 5,
+    name: 'Simple Redux cart',
+    url: 'https://github.com/superkacper4/redux-and-test',
+  },
+  {
+    key: 6,
+    name: '2018 portfolio',
+    url: 'https://github.com/superkacper4/portfolio',
+  },
+  {
+    key: 7,
+    name: 'TODO lista ;)',
+    url: 'https://github.com/superkacper4/ToDoList',
   },
 ];
 
@@ -52,16 +104,22 @@ const ProjectsPage = () => {
   return (
     <StyledWrapper>
       <H2>Projects</H2>
-      {projects.map((project) => (
-        <ProjectTile key={project.key} name={project.name} description={project.description} />
+      {projectsImportant.map((project) => (
+        <ProjectTile
+          key={project.key}
+          name={project.name}
+          description={project.description}
+          url={project.url}
+        />
       ))}
       <H3>...Projects</H3>
       <ProjectList>
-        {projects.map((project) => (
+        {projectsLess.map((project) => (
           <ProjectListElement
             key={project.key}
             name={project.name}
             description={project.description}
+            url={project.url}
           />
         ))}
       </ProjectList>

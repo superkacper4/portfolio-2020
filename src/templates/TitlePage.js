@@ -17,7 +17,7 @@ const StyledWrapper = styled(Wrapper)`
       background-color: ${({ theme }) => theme.lightBlue};
     }
     100% {
-      background-color: white;
+      background-color: ${({ theme }) => theme.darkBlue};
     }
   }
 `;

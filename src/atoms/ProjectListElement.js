@@ -17,12 +17,21 @@ const StyledListElement = styled.li`
   transform: ${({ active }) => (active ? 'translateY(0)' : 'translateY(-20px)')}; */
   transition: opacity 1.5s, transform 1.5s;
 
+  @media ${breakpoints.laptop}{
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &:hover{
+      background-color: ${({ theme }) => theme.darkBlue};
+    }
+  }
+
   @media ${breakpoints.laptopL} {
     height: 70px;
   }
 `;
 
-const ProjectListElement = ({ name }) => {
+const ProjectListElement = ({ name, url }) => {
   const [active, setActive] = useState(false);
 
   const ourRef = useRef(null);
@@ -47,7 +56,7 @@ const ProjectListElement = ({ name }) => {
   }, []);
   return (
     <StyledListElement ref={ourRef} active={active}>
-      <A href="https://example.com" target="_blank" rel="noopener noreferrer">
+      <A href={url} target="_blank" rel="noopener noreferrer">
         {name}
       </A>
     </StyledListElement>
