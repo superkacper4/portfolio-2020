@@ -103,7 +103,7 @@ const projectsLess = [
 const ProjectsPage = () => {
   return (
     <StyledWrapper id="project-page">
-      <H2>Projects</H2>
+      <H2>Projekty</H2>
       {projectsImportant.map((project) => (
         <ProjectTile
           key={project.key}
@@ -112,7 +112,7 @@ const ProjectsPage = () => {
           url={project.url}
         />
       ))}
-      <H3>...Projects</H3>
+      <H3>...Projekty</H3>
       <ProjectList>
         {projectsLess.map((project) => (
           <ProjectListElement

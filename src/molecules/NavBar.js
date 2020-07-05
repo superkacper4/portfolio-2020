@@ -21,7 +21,7 @@ const StyledNavBar = styled.button`
     content: '';
     width: 100%;
     height: 8px;
-    background-color: ${({ theme }) => theme.black};
+    background-color: ${({ active, theme }) => (active ? theme.red : theme.black)};
     position: absolute;
     top: 0;
     left: 0;
@@ -40,7 +40,7 @@ const StyledNavBar = styled.button`
     content: '';
     width: 100%;
     height: 8px;
-    background-color: ${({ theme }) => theme.black};
+    background-color: ${({ active, theme }) => (active ? theme.red : theme.black)};
     position: absolute;
     bottom: 0;
     left: 0;
