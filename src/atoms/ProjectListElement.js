@@ -55,7 +55,13 @@ const ProjectListElement = ({ name, url }) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return (
-    <StyledListElement ref={ourRef} active={active}>
+    <StyledListElement
+      ref={ourRef}
+      active={active}
+      data-sal="slide-up"
+      data-sal-delay="300"
+      data-sal-easing="ease"
+    >
       <A href={url} target="_blank" rel="noopener noreferrer">
         {name}
       </A>

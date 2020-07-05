@@ -33,7 +33,13 @@ const H2 = ({ children }) => {
   }, []);
 
   return (
-    <StyledH2 active={active} ref={ourRef}>
+    <StyledH2
+      active={active}
+      ref={ourRef}
+      data-sal="slide-up"
+      data-sal-delay="300"
+      data-sal-easing="ease"
+    >
       {children}
     </StyledH2>
   );
