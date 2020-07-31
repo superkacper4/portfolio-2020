@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../theme/breakpoints';
 import H3 from '../atoms/H3';
@@ -18,37 +18,23 @@ const StyledProjectTile = styled.div`
   margin: 0 10px 10px 10px;
   padding: 5px;
   border: ${({ theme }) => theme.black} solid 2px;
-  /* opacity: ${({ animate }) => (animate ? '1' : '0')};
-  transform: ${({ animate }) => (animate ? 'translateY(0)' : 'translateY(-10px)')}; */
   transition: transform 1.5s, opacity 1.5s;
 
   @media ${breakpoints.tablet} {
     height: 55vw;
-    width: 55vw;  
-    }
+    width: 55vw;
+  }
 
   @media ${breakpoints.laptop} {
     width: 40vw;
     height: 40vw;
-    cursor:pointer;
+    cursor: pointer;
   }
 
   @media ${breakpoints.laptopL} {
     width: 20vw;
     height: 20vw;
   }
-
-  /* &:hover{
-
-        &:before{
-            transform: translateY(-100%);
-    }
-
-    }
-
-    &:before{
-        content:'Jakaś dłuższa opis tego projekut tutaj jakby nie bylo jest bardzo milo bal bla bla dlutie';
-    } */
 `;
 
 const StyledProjectTileActive = styled.div`
@@ -71,30 +57,13 @@ const StyledProjectTileActive = styled.div`
 
 const ProjectTile = ({ name, description, url }) => {
   const [active, setActive] = useState(false);
-  const [animate, setAnimate] = useState(false);
 
   const handleClick = () => {
     setActive(!active);
   };
 
-  const ourRef = useRef(null);
-
-  useLayoutEffect(() => {
-    const topPosition = ourRef.current.getBoundingClientRect().top + ourRef.current.offsetHeight;
-
-    const onScroll = () => {
-      const scrollVal = window.scrollY + window.innerHeight / 4;
-      if (scrollVal > topPosition) {
-        setAnimate(true);
-      }
-    };
-
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <StyledProjectTile ref={ourRef} onClick={handleClick} animate={animate}>
+    <StyledProjectTile onClick={handleClick}>
       <H3>{name}</H3>
       <StyledProjectTileActive active={active}>
         {description}

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { breakpoints } from '../theme/breakpoints';
 import Wrapper from '../atoms/Wrapper';
-import P from '../atoms/P';
 import H2 from '../atoms/H2';
 import H3 from '../atoms/H3';
 
@@ -14,40 +14,71 @@ const StyledWrapper = styled(Wrapper)`
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 10px;
+
+  @media ${breakpoints.laptop} {
+    padding: 50px 300px;
+  }
 `;
 
 const skills = [
   {
     key: 0,
     name: 'HTML',
-    description: 'Staram się pisać poprawny semantycznie kod',
   },
   {
     key: 1,
     name: 'CSS',
-    description: 'Znam flex-box, animacje i ogólnie sobie radzę.',
   },
   {
     key: 2,
     name: 'JavaScript',
-    description: 'Znam JS na tyle dobrze, że daję radę w React, umiem oczywiście więcej.......',
   },
   {
     key: 3,
     name: 'React',
-    description: 'Moja zdecydowanie ulubiona technologia Front-endowa, znam hooki.',
+  },
+  {
+    key: 4,
+    name: 'Node.js',
+  },
+  {
+    key: 5,
+    name: 'ESLint',
+  },
+  {
+    key: 6,
+    name: 'Git i Github',
+  },
+  {
+    key: 7,
+    name: 'SCSS',
+  },
+  {
+    key: 8,
+    name: 'styled-components',
+  },
+  {
+    key: 9,
+    name: 'React-Native',
+  },
+  {
+    key: 10,
+    name: 'Gatsby',
+  },
+  {
+    key: 11,
+    name: 'MongoDB',
   },
 ];
 
 const SkillPage = () => {
   return (
     <StyledWrapper id="skill-page">
-      <H2>Skills</H2>
+      <H2>Skill</H2>
       {/* <P>Piszę w tym i tym pbaljadkjfljfk</P> */}
       {skills.map((skill) => (
         <SkillTile key={skill.key}>
           <H3>{skill.name}</H3>
-          <P>{skill.description}</P>
         </SkillTile>
       ))}
     </StyledWrapper>
